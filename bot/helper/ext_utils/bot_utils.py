@@ -122,7 +122,8 @@ def get_readable_message():
             if PAGE_NO > pages and pages != 0:
                 globals()['COUNT'] -= STATUS_LIMIT
                 globals()['PAGE_NO'] -= 1
-        msg += "<b>____ᴘᴏᴡᴇʀᴇᴅ ʙʏ____</b> @DhruvMirrorUpdates \n\n"        
+        msg += "<b>____ᴘᴏᴡᴇʀᴇᴅ ʙʏ____</b> @DhruvMirrorUpdates \n\n" 
+        msg += "\n━━━━━━━━━━━━━━━━━━━━━━"
         for index, download in enumerate(list(download_dict.values())[COUNT:], start=1):
             msg += f"<b>ɴᴀᴍᴇ: </b> <code>{escape(str(download.name()))}</code>"
             
@@ -174,7 +175,7 @@ def get_readable_message():
             msg += "\n\n"
             if STATUS_LIMIT is not None and index == STATUS_LIMIT:
                 break
-        bmsg += f"\n<b> ғʀᴇᴇ:</b> {get_readable_file_size(disk_usage(DOWNLOAD_DIR).free)} <b>ᴜᴘᴛɪᴍᴇ:</b> {get_readable_time(time() - botStartTime)}"
+        bmsg += f"\n<b> ғʀᴇᴇ:</b> {get_readable_file_size(disk_usage(DOWNLOAD_DIR).free)} | <b>ᴜᴘᴛɪᴍᴇ: </b> {get_readable_time(time() - botStartTime)}"
         dlspeed_bytes = 0
         upspeed_bytes = 0
         for download in list(download_dict.values()):
