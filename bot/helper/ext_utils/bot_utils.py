@@ -122,10 +122,10 @@ def get_readable_message():
             if PAGE_NO > pages and pages != 0:
                 globals()['COUNT'] -= STATUS_LIMIT
                 globals()['PAGE_NO'] -= 1
-        msg += "<b>______ᴘᴏᴡᴇʀᴇᴅ ʙʏ______</b> @DhruvMirrorUpdates\n\n"
+        msg += "<b>______ᴘᴏᴡᴇʀᴇᴅ ʙʏ______</b> @DhruvMirrorUpdates\n"
         msg += "━━━━━━━━━━━━━━━━━━━━━━━━"
         for index, download in enumerate(list(download_dict.values())[COUNT:], start=1):
-            msg += "\nɴᴀᴍᴇ: </b> <code>{escape(str(download.name()))}</code>"
+            msg += "\n ɴᴀᴍᴇ: </b> <code>{escape(str(download.name()))}</code>"
             
             msg += f"\n<b>sᴛᴀᴛᴜs:</b> <i>{download.status()}</i>"
             if download.status() not in [
@@ -136,11 +136,11 @@ def get_readable_message():
             ]:
                 msg += f"\n{get_progress_bar_string(download)} {download.progress()}"
                 if download.status() == MirrorStatus.STATUS_CLONING:
-                    msg += f"\n<b>ᴄʟᴏɴᴇᴅ: </b> {get_readable_file_size(download.processed_bytes())} of {download.size()}"
+                    msg += f"\n<b>CLONED: </b> {get_readable_file_size(download.processed_bytes())} of {download.size()}"
                 elif download.status() == MirrorStatus.STATUS_UPLOADING:
-                    msg += f"\n<b>ᴜᴘʟᴏᴀᴅᴇᴅ: </b> {get_readable_file_size(download.processed_bytes())} of {download.size()}"
+                    msg += f"\n<b>UPLOADED: </b> {get_readable_file_size(download.processed_bytes())} of {download.size()}"
                 else:
-                    msg += f"\n<b>ᴅᴏᴡɴʟᴏᴀᴅᴇᴅ: </b> {get_readable_file_size(download.processed_bytes())} of {download.size()}"
+                    msg += f"\n<b>DOWNLOADED: </b> {get_readable_file_size(download.processed_bytes())} of {download.size()}"
                 msg += f"\n<b>sᴘᴇᴇᴅ: </b> {download.speed()} | <b>ETA:</b> {download.eta()}"
                 msg += f"\n<b>ᴛɪᴍᴇ ᴇʟᴀᴘsᴇᴅ: </b>{get_readable_time(time() - download.message.date.timestamp())}"
                 try:
