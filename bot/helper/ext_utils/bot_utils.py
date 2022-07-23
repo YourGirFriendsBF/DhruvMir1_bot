@@ -123,7 +123,7 @@ def get_readable_message():
                 globals()['COUNT'] -= STATUS_LIMIT
                 globals()['PAGE_NO'] -= 1
         msg += "<b>______ᴘᴏᴡᴇʀᴇᴅ ʙʏ______</b> @DhruvMirrorUpdates\n"
-        msg += "━━━━━━━━━━━━━━━━━━━━━"
+        msg += "\n━━━━━━━━━━━━━━━━━━━━━\n"
         for index, download in enumerate(list(download_dict.values())[COUNT:], start=1):
             msg += f"\n<b>ɴᴀᴍᴇ: </b> <code>{escape(str(download.name()))}</code>"
             
