@@ -122,10 +122,10 @@ def get_readable_message():
             if PAGE_NO > pages and pages != 0:
                 globals()['COUNT'] -= STATUS_LIMIT
                 globals()['PAGE_NO'] -= 1
-        msg += "<b>______ᴘᴏᴡᴇʀᴇᴅ ʙʏ______</b> @DhruvMirrorUpdates\n\n
+        msg += "<b>______ᴘᴏᴡᴇʀᴇᴅ ʙʏ______</b> @DhruvMirrorUpdates\n\n"
         msg += "━━━━━━━━━━━━━━━━━━━━━━━━"
         for index, download in enumerate(list(download_dict.values())[COUNT:], start=1):
-            msg += f"\n>ɴᴀᴍᴇ: </b> <code>{escape(str(download.name()))}</code>"
+            msg += "\n>ɴᴀᴍᴇ: </b> <code>{escape(str(download.name()))}</code>"
             
             msg += f"\n<b>sᴛᴀᴛᴜs:</b> <i>{download.status()}</i>"
             if download.status() not in [
